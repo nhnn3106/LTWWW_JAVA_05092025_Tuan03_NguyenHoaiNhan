@@ -223,57 +223,54 @@
         <div class="form-row">
             <label class="form-label">Hobbies:</label>
             <div class="checkbox-group">
-                <label><input type="checkbox" name="hobbies" value="Drawing" /> Drawing</label>
+                <label><input type="checkbox" name="hobbies" value="Drawing" checked/> Drawing</label>
                 <label><input type="checkbox" name="hobbies" value="Singing" /> Singing</label>
                 <label><input type="checkbox" name="hobbies" value="Dancing" /> Dancing</label>
                 <label><input type="checkbox" name="hobbies" value="Sketching" /> Sketching</label>
                 <label><input type="checkbox" name="hobbies" value="Others" /> Others</label>
-                <input type="text" name="otherHobby" class="form-input" placeholder="Specify other hobby" style="margin-left: 10px;" />
+                <input type="text" name="otherHobby" class="form-input" placeholder="Specify other hobby" style="" />
             </div>
         </div>
 
-        <!-- Skills Table -->
-        <table class="skills-table">
-            <tr>
-                <th>Sr. No. Classification</th>
-                <th>Class X</th>
-                <th>Class XII</th>
-                <th>Graduation</th>
-                <th>Post Graduation</th>
-            </tr>
-            <tr>
-                <td><strong>Course</strong></td>
-                <td><input type="text" name="courseX" style="width: 100%; border: none;" /></td>
-                <td><input type="text" name="courseXII" style="width: 100%; border: none;" /></td>
-                <td><input type="text" name="courseGrad" style="width: 100%; border: none;" /></td>
-                <td><input type="text" name="coursePostGrad" style="width: 100%; border: none;" /></td>
-            </tr>
-            <tr>
-                <td><strong>Board</strong></td>
-                <td><input type="text" name="boardX" style="width: 100%; border: none;" /></td>
-                <td><input type="text" name="boardXII" style="width: 100%; border: none;" /></td>
-                <td><input type="text" name="boardGrad" style="width: 100%; border: none;" /></td>
-                <td><input type="text" name="boardPostGrad" style="width: 100%; border: none;" /></td>
-            </tr>
-            <tr>
-                <td><strong>Percentage</strong></td>
-                <td><input type="text" name="percentageX" style="width: 100%; border: none;" /></td>
-                <td><input type="text" name="percentageXII" style="width: 100%; border: none;" /></td>
-                <td><input type="text" name="percentageGrad" style="width: 100%; border: none;" /></td>
-                <td><input type="text" name="percentagePostGrad" style="width: 100%; border: none;" /></td>
-            </tr>
-            <tr>
-                <td><strong>Year of Passing</strong></td>
-                <td><input type="text" name="yearX" style="width: 100%; border: none;" /></td>
-                <td><input type="text" name="yearXII" style="width: 100%; border: none;" /></td>
-                <td><input type="text" name="yearGrad" style="width: 100%; border: none;" /></td>
-                <td><input type="text" name="yearPostGrad" style="width: 100%; border: none;" /></td>
-            </tr>
-        </table>
+        <div class="form-row">
+            <label class="form-label">Qualifications:</label>
+            <!-- Skills Table -->
+            <table class="skills-table">
+                <tr>
+                    <th>Sr. No. Classification</th>
+                    <th>Class X</th>
+                    <th>Class XII</th>
+                    <th>Graduation</th>
+                    <th>Master</th>
+                </tr>
+                <tr>
+                    <td><strong>Board</strong></td>
+                    <td><input type="text" name="boardX" style="width: 100%; border: none;" /></td>
+                    <td><input type="text" name="boardXII" style="width: 100%; border: none;" /></td>
+                    <td><input type="text" name="boardGrad" style="width: 100%; border: none;" /></td>
+                    <td><input type="text" name="boardMaster" style="width: 100%; border: none;" /></td>
+                </tr>
+                <tr>
+                    <td><strong>Percentage</strong></td>
+                    <td><input type="number" name="percentageX" style="width: 100%; border: none;" /></td>
+                    <td><input type="number" name="percentageXII" style="width: 100%; border: none;" /></td>
+                    <td><input type="number" name="percentageGrad" style="width: 100%; border: none;" /></td>
+                    <td><input type="number" name="percentageMaster" style="width: 100%; border: none;" /></td>
+                </tr>
+                <tr>
+                    <td><strong>Year of Passing</strong></td>
+                    <td><input type="number" name="yearX" style="width: 100%; border: none;" /></td>
+                    <td><input type="number" name="yearXII" style="width: 100%; border: none;" /></td>
+                    <td><input type="number" name="yearGrad" style="width: 100%; border: none;" /></td>
+                    <td><input type="number" name="yearMaster" style="width: 100%; border: none;" /></td>
+                </tr>
+            </table>
+        </div>
+
 
         <div class="qualification-radio">
             <label style="font-weight: bold;">Course applied for:</label>
-            <label><input type="radio" name="courseApplied" value="BCA" /> BCA</label>
+            <label><input type="radio" name="courseApplied" value="BCA" checked/> BCA</label>
             <label><input type="radio" name="courseApplied" value="BBA" /> BBA</label>
             <label><input type="radio" name="courseApplied" value="B.Tech" /> B.Tech</label>
             <label><input type="radio" name="courseApplied" value="MBA" /> MBA</label>

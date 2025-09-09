@@ -1,5 +1,6 @@
 package fit.iuh.se;
 
+import fit.iuh.se.model.Education;
 import fit.iuh.se.model.Student;
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
@@ -10,6 +11,7 @@ import jakarta.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
 import java.time.LocalDate;
+import java.util.HashSet;
 import java.util.Set;
 
 @WebServlet("/registration-form")
@@ -34,10 +36,53 @@ public class RegistrationForm extends HttpServlet {
         int pincode = Integer.parseInt(req.getParameter("pincode"));
         String state = req.getParameter("state");
         String country = req.getParameter("country");
-        Set<String> hobbies = Set.<String>of(req.getParameterValues("hobbies"));
-        String otherHobby = req.getParameter("otherHobby");
-        hobbies.add(otherHobby);
 
+
+        // hobbies
+        String[] hobbiesArray = req.getParameterValues("hobbies");
+        Set<String> hobbies = new HashSet<>();
+        if (hobbiesArray != null) {
+            for (String hobby : hobbiesArray) {
+                hobbies.add(hobby);
+            }
+        }
+        String otherHobby = req.getParameter("otherHobby");
+        if (otherHobby != null && !otherHobby.trim().isEmpty()) {
+            hobbies.add(otherHobby);
+        }
+
+
+        //quailifications
+        Set<Education> qualifications = new HashSet<>();
+            String boardX = req.getParameter("boardX");
+            String boardXII = req.getParameter("boardXII");
+            String boardGrad = req.getParameter("boardGrad");
+            String boardMaster = req.getParameter("boardMaster");
+
+            String percentageXStr = req.getParameter("percentageX");
+            String percentageXIIStr = req.getParameter("percentageXII");
+            String percentageGradStr = req.getParameter("percentageGrad");
+            String percentageMasterStr = req.getParameter("percentageMaster");
+
+            String yearXStr = req.getParameter("yearX");
+            String yearXIIStr = req.getParameter("yearXII");
+            String yearGradStr = req.getParameter("yearGrad");
+            String yearMasterStr = req.getParameter("yearMaster");
+            // Add qualifications only if values are provided
+            if (boardX != null && !boardX.trim().isEmpty() && percentageXStr != null && yearXStr != null) {
+                qualifications.add(new Education( "Class X", boardX, Double.parseDouble(percentageXStr), Integer.parseInt(yearXStr)));
+            }
+            if (boardXII != null && !boardXII.trim().isEmpty() && percentageXIIStr != null && yearXIIStr != null) {
+                qualifications.add(new Education("Class XII",boardXII, Double.parseDouble(percentageXIIStr), Integer.parseInt(yearXIIStr)));
+            }
+            if (boardGrad != null && !boardGrad.trim().isEmpty() && percentageGradStr != null && yearGradStr != null) {
+                qualifications.add(new Education("Graduation", boardGrad, Double.parseDouble(percentageGradStr), Integer.parseInt(yearGradStr)));
+            }
+            if (boardMaster != null && !boardMaster.trim().isEmpty() && percentageMasterStr != null && yearMasterStr != null) {
+                qualifications.add(new Education("Master", boardMaster, Double.parseDouble(percentageMasterStr), Integer.parseInt(yearMasterStr)));
+            }
+
+        String course = req.getParameter("courseApplied");
 
 
         Student sv = new Student();
@@ -53,6 +98,10 @@ public class RegistrationForm extends HttpServlet {
         sv.setState(state);
         sv.setCountry(country);
         sv.setHobbies(hobbies);
+        sv.setQualifications(qualifications);
+        sv.setCourse(course);
+
+        System.out.println(sv);
 
 
 

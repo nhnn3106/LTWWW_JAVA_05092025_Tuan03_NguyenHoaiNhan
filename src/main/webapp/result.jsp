@@ -13,7 +13,18 @@
     out.println(
             "First name: " + student.getFirstName() +
                     "<br> Last name: " + student.getLastName() +
-                    "<br> Date of birth: " + student.getDateOfBirth()
+                    "<br> Date of birth: " + student.getDateOfBirth()+
+                    "<br> Email: " + student.getEmail()  +
+                    "<br> Number: " + (student.isGender() ? "male" : "female") +
+                    "<br> Address: " + student.getAddress() +
+                    "<br> City: " + student.getCity() +
+                    "<br> Pincode: " + student.getPostalCode() +
+                    "<br> State: " + student.getState() +
+                    "<br> Country: " + student.getCountry() +
+                    "<br> Hobbies: " + student.getHobbies() +
+                    "br> Qualifications" + student.getQualifications() +
+                    "<br> Course: " + student.getCourse()
+
     );
     %>
 </head>

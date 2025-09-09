@@ -17,10 +17,10 @@ public class Student {
     private String state;
     private String country;
     private Set<String> hobbies;
-    private HashMap<String, String> qualifications;
+    private Set<Education> qualifications;
     private String course;
 
-    public Student(String firstName, String lastName, LocalDate dateOfBirth, String email, boolean gender, String number, String address, String city, int postalCode, String state, String country, Set<String> hobbies, HashMap<String, String> qualifications, String course) {
+    public Student(String firstName, String lastName, LocalDate dateOfBirth, String email, boolean gender, String number, String address, String city, int postalCode, String state, String country, Set<String> hobbies, Set<Education> qualifications, String course) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.dateOfBirth = dateOfBirth;
@@ -136,11 +136,11 @@ public class Student {
         this.hobbies = hobbies;
     }
 
-    public HashMap<String, String> getQualifications() {
+    public Set<Education> getQualifications() {
         return qualifications;
     }
 
-    public void setQualifications(HashMap<String, String> qualifications) {
+    public void setQualifications(Set<Education> qualifications) {
         this.qualifications = qualifications;
     }
 
