@@ -37,7 +37,7 @@ public class UserRegistrationForm extends HttpServlet {
         System.out.println(user);
 
         req.setAttribute("user", user);
-        
+
         RequestDispatcher r = req.getRequestDispatcher("userResult.jsp");
         r.forward(req, resp);
     }
